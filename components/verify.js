@@ -15,31 +15,38 @@ module.exports = {
                 .setCustomId('github')
                 .setLabel("Github (Just the User) EX: NCCoder2")
                 .setStyle(TextInputStyle.Short)
-                .setMaxLength(20);
+                .setMaxLength(80);
 
             const Site = new TextInputBuilder()
                 .setCustomId('site')
-                .setLabel("Which site do you own?")
-                .setMaxLength(20)
+                .setLabel("Which site do you own/contribute?")
+                .setMaxLength(80)
+                .setStyle(TextInputStyle.Short);
+
+            const status = new TextInputBuilder()
+                .setCustomId('status')
+                .setLabel("Do you contribute(c) or own(o). Type letter")
+                .setMaxLength(1)
                 .setStyle(TextInputStyle.Short);
 
             const siteLink = new TextInputBuilder()
                 .setCustomId('site_link')
                 .setLabel("Link to Your Site")
-                .setMaxLength(20)
+                .setMaxLength(80)
                 .setStyle(TextInputStyle.Short);
 
             const siteDiscord = new TextInputBuilder()
                 .setCustomId('site_discord')
-                .setLabel("Discord (EX: goshadow)")
-                .setMaxLength(20)
+                .setLabel("Discord Server (EX: goshadow)")
+                .setMaxLength(80)
                 .setStyle(TextInputStyle.Short);
 
             const onerow = new ActionRowBuilder().addComponents(Github);
             const tworow = new ActionRowBuilder().addComponents(Site);
+            const statusrow = new ActionRowBuilder().addComponents(status);
             const threerow = new ActionRowBuilder().addComponents(siteLink);
             const fourrow = new ActionRowBuilder().addComponents(siteDiscord);
-            modal.addComponents(onerow, tworow, threerow, fourrow);
+            modal.addComponents(onerow, tworow, threerow, fourrow, statusrow);
             await interaction.showModal(modal);
         } catch (error) {
             console.error('Error occurred:', error);
