@@ -2,7 +2,7 @@ const { Client, GatewayIntentBits, REST, ActivityType } = require('discord.js');
 const { Routes } = require('discord-api-types/v10');
 const { readdirSync, readFileSync } = require('fs');
 const { SlashCommandBuilder } = require('@discordjs/builders');
-const token = "MTIwOTE5NDE5ODg0MzEyOTk4Ng.GpY2be.aY8vwfFx0B1h0STiNhmYnzgfSuWRG3Kg5qWClY";
+const token = "";
 const client = new Client({
   intents: [
     GatewayIntentBits.Guilds,
