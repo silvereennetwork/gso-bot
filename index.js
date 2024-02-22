@@ -47,7 +47,7 @@ client.once('ready', async () => {
       const commandsPayload = commands.map(command => ({ name: command.name, description: command.description, options: command.options }));
   
       await rest.put(
-        Routes.applicationGuildCommands("1209194198843129986", "1208852467891314798"),
+        Routes.applicationGuildCommands("1209066635777015878", "1208852467891314798"),
         { body: [...commands] },
       );
         
