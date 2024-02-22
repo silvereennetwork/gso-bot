@@ -10,7 +10,7 @@ module.exports = {
             const userId = footer.split(': ')[1];
             const user = await interaction.client.users.fetch(userId);
             const guild = interaction.guild;
-            const fieldValue = interaction.message.embeds[0].fields[4].value.toUpperCase();
+            const fieldValue = interaction.message.embeds[0].fields[4].value.replace(/`/g, '').toUpperCase();
 
             let verificationRoleid;
             if (fieldValue === 'C') {
